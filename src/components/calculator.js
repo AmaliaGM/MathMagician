@@ -1,6 +1,6 @@
 function Calc() {
   return (
-    <div className="calculator">
+   <div className="calculator">
 
         2345
     </div>

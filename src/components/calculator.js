@@ -1,10 +1,14 @@
-function Calc() {
-  return (
-   <div className="calculator">
+import React from "react";
 
-        2345
-    </div>
-  );
+class Calc extends React.Component {
+  render() {
+    return (
+      <div className="calculator">
+   
+           2345
+       </div>
+     );
+  }
 }
 
 export default Calc;

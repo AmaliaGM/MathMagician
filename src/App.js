@@ -11,7 +11,8 @@ const btnValues = [
   ['0', '.', '='],
 ];
 
-function App() {
+class App extends Calc {
+  render() {
   return (
     <div className="App">
       <Wrapper>
@@ -27,6 +28,7 @@ function App() {
       </Wrapper>
     </div>
   );
+}
 }
 
 export default App;

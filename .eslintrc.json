@@ -16,6 +16,7 @@
     "airbnb", "eslint:recommended","plugin:react/recommended"],
   "plugins": ["react"],
   "rules": {
+    "react/prop-types": "off",
     "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
     "react/react-in-jsx-scope": "off",
     "import/no-unresolved": "off",

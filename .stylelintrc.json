@@ -8,6 +8,7 @@
         "ignoreAtRules": ["tailwind", "apply", "variants", "responsive", "screen"]
       }
     ],
+    "selector-class-pattern": null,
     "scss/at-rule-no-unknown":  [
       true,
       {

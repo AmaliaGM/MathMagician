@@ -1,7 +1,6 @@
 /* eslint no-eval: 0 */
-import React from 'react';
-import calculate from '../logic/calculate';
 import { useState } from 'react';
+import calculate from '../logic/calculate';
 
 function Calc() {
   const [calc, setCalc] = useState(0);

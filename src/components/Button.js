@@ -1,4 +1,6 @@
-import React from 'react';
+/* import React from 'react';
+import calculate from '../logic/calculate';
+// import calculate from '../logic/calculate';
 
 const getStyleName = (btn) => {
   const className = {
@@ -13,9 +15,14 @@ const getStyleName = (btn) => {
 };
 
 function Button({ value }) {
+  function handleBtnClick() {
+    calculate();
+  }
   return (
-    <button type="button" className={`${getStyleName(value)} button`}>{value}</button>
+    <button onClick={handleBtnClick} type="button"
+    className={`${getStyleName(value)} button`}>{value}</button>
   );
 }
 
 export default Button;
+ */

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "big.js": "^6.2.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
@@ -42,5 +43,17 @@
     "stylelint-config-standard": "^27.0.0",
     "stylelint-csstree-validator": "^2.0.0",
     "stylelint-scss": "^4.3.0"
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AmaliaGM/MathMagician.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AmaliaGM/MathMagician/issues"
+  },
+  "homepage": "https://github.com/AmaliaGM/MathMagician#readme"
 }

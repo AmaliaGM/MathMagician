@@ -1,7 +1,8 @@
+import Screen from './components/Screen';
 import Wrapper from './components/wrapper';
-import Calc from './components/calculator';
 import ButtonBox from './components/ButtonBox';
 import Button from './components/Button';
+import CalcProvider from './logic/CalcContext';
 
 const btnValues = [
   ['AC', '+/-', '%', '/'],
@@ -13,9 +14,9 @@ const btnValues = [
 
 function App() {
   return (
-    <div className="App">
+    <CalcProvider>
       <Wrapper>
-        <Calc />
+        <Screen />
         <ButtonBox>
           {btnValues.flat().map((btn, i) => (
             <Button
@@ -25,7 +26,7 @@ function App() {
           ))}
         </ButtonBox>
       </Wrapper>
-    </div>
+    </CalcProvider>
   );
 }
 

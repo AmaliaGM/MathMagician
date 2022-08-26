@@ -63,7 +63,6 @@ const Button = ({ value }) => {
           '/': (a, b) => a / b,
         };
         return result[sign](a, b);
-        return result;
       };
       setCalc({
         res: math(calc.res, calc.num, calc.sign),

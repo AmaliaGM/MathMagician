@@ -44,17 +44,15 @@ const Button = ({ value }) => {
     });
   };
 
-  const signClick = (e) => {
-    e.preventDefault();
-    const value = e.target.innerHTML;
-  
+  const signClick = () => {
+    if (value === '+' || value === '-' || value === '/' || value === 'x') {
     setCalc({
-      ...calc,
       sign: value,
       res: !calc.res && calc.num ? calc.num : calc.res,
       num: 0,
     });
   };
+}
 
   const equalsClick = () => {
     if (calc.sign && calc.num) {
@@ -65,6 +63,7 @@ const Button = ({ value }) => {
           x: (a, b) => a * b,
           '/': (a, b) => a / b,
         };
+        return result[sign](a, b);
         return result; 
       };
       setCalc({

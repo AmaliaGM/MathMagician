@@ -1,10 +1,11 @@
 import { useContext } from 'react';
 import { CalcContext } from '../logic/CalcContext';
+import calculate from '../logic/calculate';
 
 const getStyleName = (btn) => {
   const className = {
-    0: 'equals',
-    '=': 'opt',
+    0: 'cero',
+    '=': 'opt equals',
     x: 'opt',
     '-': 'opt',
     '+': 'opt',
@@ -43,8 +44,12 @@ const Button = ({ value }) => {
     });
   };
 
-  const signClick = () => {
+  const signClick = (e) => {
+    e.preventDefault();
+    const value = e.target.innerHTML;
+  
     setCalc({
+      ...calc,
       sign: value,
       res: !calc.res && calc.num ? calc.num : calc.res,
       num: 0,
@@ -54,13 +59,13 @@ const Button = ({ value }) => {
   const equalsClick = () => {
     if (calc.sign && calc.num) {
       const math = (a, b, sign) => {
-        const result = {
+         const result = {
           '+': (a, b) => a + b,
           '-': (a, b) => a - b,
           x: (a, b) => a * b,
           '/': (a, b) => a / b,
         };
-        return result[sign][a, b];
+        return result; 
       };
       setCalc({
         res: math(calc.res, calc.num, calc.sign),

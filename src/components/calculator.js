@@ -1,77 +1,116 @@
-/* eslint no-eval: 0 */
-import React from 'react';
-import calculate from '../logic/calculate';
-import { useState } from 'react';
+import React, { useContext } from 'react';
+import { CalcContext } from '../logic/CalcContext';
 
-function Calc() {
-  const [calc, setCalc] = useState(0);
-  const handleBtnClick = (event) => {
-    setCalc((calc) => calculate(calc, event.target.innerHTML));
+const getStyleName = (btn) => {
+  const className = {
+    0: 'cero',
+    '=': 'opt equals',
+    x: 'opt',
+    '-': 'opt',
+    '+': 'opt',
+    '/': 'opt',
   };
-  const [result, setResult] = useState('');
+  return className[btn];
+};
 
-  const ops = ['/', '*', '+', '-', '.'];
-
-  const updateCalc = (value) => {
-    if (
-      (ops.includes(value) && calc === '')
-      || (ops.includes(value) && ops.includes(calc.slice(-1)))
-    ) {
-      return;
-    }
-    setCalc(calc + value);
-
-    if (!ops.includes(value)) {
-      setResult(eval(calc + value).toString());
-    }
+const Button = ({ value }) => {
+  const { calc } = useContext(CalcContext);
+  const { setCalc } = useContext(CalcContext);
+  const commaClick = () => {
+    setCalc({
+      ...calc,
+      num: !calc.num.toString().includes('.') ? calc.num + value : calc.num,
+    });
   };
 
-  const createDigits = () => {
-    const digits = [];
+  const resetClick = () => {
+    setCalc({ sign: '', num: 0, res: 0 });
+  };
 
-    for (let i = 1; i < 10; i += 1) {
-      digits.push(
-        <button
-          type="button"
-          onClick={() => updateCalc(i.toString())}
-          key={i}
-        >
-          {i}
-        </button>,
-      );
+  const handleClickButton = () => {
+    const numberString = value.toString();
+
+    let numberValue;
+    if (numberString === '0' && calc.num === 0) {
+      numberValue = '0';
+    } else {
+      numberValue = Number(calc.num + numberString);
     }
-    return digits;
+
+    setCalc({
+      ...calc,
+      num: numberValue,
+    });
+  };
+
+  const signClick = () => {
+    if (value === '+' || value === '-' || value === '/' || value === 'x') {
+      setCalc({
+        sign: value,
+        res: !calc.res && calc.num ? calc.num : calc.res,
+        num: 0,
+      });
+    }
+  };
+
+  const equalsClick = () => {
+    if (calc.sign && calc.num) {
+      const math = (a, b, sign) => {
+        const result = {
+          '+': (a, b) => a + b,
+          '-': (a, b) => a - b,
+          x: (a, b) => a * b,
+          '/': (a, b) => a / b,
+        };
+        return result[sign](a, b);
+      };
+      setCalc({
+        res: math(calc.res, calc.num, calc.sign),
+        sign: '',
+        num: 0,
+      });
+    }
+  };
+
+  const percentClick = () => {
+    setCalc({
+      num: (calc.num / 100),
+      res: (calc.res / 100),
+      sign: '',
+    });
+  };
+
+  const invertClick = () => {
+    setCalc({
+      num: calc.num ? calc.num * -1 : 0,
+      res: calc.res ? calc.res * -1 : 0,
+      sign: '',
+    });
+  };
+  const handleBtnClick = () => {
+    const results = {
+      '.': commaClick,
+      AC: resetClick,
+      '/': signClick,
+      x: signClick,
+      '-': signClick,
+      '+': signClick,
+      '=': equalsClick,
+      '%': percentClick,
+      '+/-': invertClick,
+
+    };
+    if (results[value]) {
+      return results[value]();
+    }
+    return handleClickButton();
   };
 
   return (
-    <div>
-      <Calc value="0" />
-      <div>
-        {result ? (
-          <span>
-            (
-            {result}
-            )
-          </span>
-        ) : ''}
-        nbsp;
-        {calc || '0'}
-      </div>
-      <div className="operators">
-        <button type="button" onClick={handleBtnClick}>/</button>
-        <button type="button" onClick={handleBtnClick}>*</button>
-        <button type="button" onClick={handleBtnClick}>+</button>
-        <button type="button" onClick={handleBtnClick}>-</button>
-        <button type="button" onClick={handleBtnClick}>A/C</button>
-      </div>
-      <div className="digits">
-        { createDigits() }
-        <button type="button" onClick={handleBtnClick}>0</button>
-        <button type="button" onClick={handleBtnClick}>=</button>
-        <button type="button" onClick={handleBtnClick}>.</button>
-      </div>
-    </div>
+    <button type="button" onClick={handleBtnClick} className={`${getStyleName(value)} button`}>
+      {value}
+    </button>
   );
-}
+};
 
-export default Calc;
+export default Button;

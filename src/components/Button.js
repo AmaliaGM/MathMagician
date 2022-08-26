@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { CalcContext } from '../logic/CalcContext';
+import React from 'react';
 
 const getStyleName = (btn) => {
   const className = {
@@ -115,3 +116,4 @@ const Button = ({ value }) => {
 };
 
 export default Button;
+ 

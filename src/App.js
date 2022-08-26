@@ -1,4 +1,3 @@
-// import React from 'react';
 import Screen from './components/Screen';
 import Wrapper from './components/wrapper';
 import ButtonBox from './components/ButtonBox';
@@ -11,7 +10,7 @@ const btnValues = [
   ['4', '5', '6', '-'],
   ['1', '2', '3', '+'],
   ['0', '.', '='],
-];
+]; 
 
 function App() {
   return (

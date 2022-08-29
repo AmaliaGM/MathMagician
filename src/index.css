@@ -48,7 +48,7 @@ div.calculator {
   border: 2px dotted black;
 }
 
-.cero {
+.equals {
   grid-column: 1/3;
 }
 

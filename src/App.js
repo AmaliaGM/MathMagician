@@ -1,7 +1,7 @@
 import Screen from './components/Screen';
 import Wrapper from './components/wrapper';
 import ButtonBox from './components/ButtonBox';
-import Button from './components/Button';
+import Button from './components/Calculator';
 import CalcProvider from './logic/CalcContext';
 
 const btnValues = [

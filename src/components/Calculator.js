@@ -113,4 +113,24 @@ const Button = ({ value }) => {
   );
 };
 
+function add(a, b) {
+  return a + b;
+}
+
+function substract(a, b) {
+  return a - b;
+}
+
+function divide(a, b) {
+  return a / b;
+}
+
+function multiply(a, b) {
+  return a * b;
+}
+
 export default Button;
+module.exports.add = add;
+module.exports.substract = substract;
+module.exports.divide = divide;
+module.exports.multiply = multiply;

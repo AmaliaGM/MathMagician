@@ -30,8 +30,8 @@ Previously expirience with React
 👤 Amalia Gomez Moro
 
 GitHub: @AmaliaGM
-Twitter: @twitterhandle
-LinkedIn: LinkedIn
+Twitter: @AmaliaGomezMoro
+LinkedIn: Maria Amalia Gomez Moro
 
 ## 🤝 Contributing
 Contributions, issues, and feature requests are welcome!

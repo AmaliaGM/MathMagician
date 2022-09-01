@@ -11,4 +11,6 @@ root.render(
       <App />
     </BrowserRouter>
   </React.StrictMode>,
-);
+/*   ReactDOM.render(<App/>,document.getElementById('root'))
+ */);
+

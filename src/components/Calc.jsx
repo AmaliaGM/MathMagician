@@ -15,7 +15,7 @@ const btnValues = [
 
 function Calc() {
   return (
-    <div>
+    <div className='calcContainer'>
       <h2 className="lets">Let´s do some Math!</h2>
       <div>
         <CalcProvider>

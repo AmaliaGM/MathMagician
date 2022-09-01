@@ -5,6 +5,7 @@ function Screen() {
   const { calc } = useContext(CalcContext);
   return (
     <div className="calculator" max={70} mode="doble">
+
       {calc.num ? calc.num : calc.res}
     </div>
   );

@@ -14,7 +14,6 @@ body {
 }
 
 div.calculator {
-  padding: 10%;
   height: 4rem;
   padding-top: 2rem;
 }
@@ -29,7 +28,6 @@ div.calculator {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0.5rem;
-  padding: 10%;
 }
 
 .button {

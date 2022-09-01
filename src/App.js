@@ -1,23 +1,32 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import Calc from './components/Calc';
-import Home from './components/Home';
-import Nav from './components/Nav';
-import Quote from './components/Quote';
-import './components/myStyle.css';
+import Screen from './components/Screen';
+import Wrapper from './components/wrapper';
+import ButtonBox from './components/ButtonBox';
+import Button from './components/Calculator';
+import CalcProvider from './logic/CalcContext';
+
+const btnValues = [
+  ['AC', '+/-', '%', '/'],
+  ['7', '8', '9', 'x'],
+  ['4', '5', '6', '-'],
+  ['1', '2', '3', '+'],
+  ['0', '.', '='],
+];
 
 function App() {
   return (
-  <>
-    <Nav />
-    <div className='container'>
-      <Routes>
-        <Route exact path='home' element={<Home />}/>;
-        <Route exact path='calc' element={<Calc />}/>;
-        <Route exact path='quote' element={<Quote />}/>;
-      </Routes>
-    </div>
-  </> 
+    <CalcProvider>
+      <Wrapper>
+        <Screen />
+        <ButtonBox>
+          {btnValues.flat().map((btn, i) => (
+            <Button
+              value={btn}
+              key={i}
+            />
+          ))}
+        </ButtonBox>
+      </Wrapper>
+    </CalcProvider>
   );
 }
 

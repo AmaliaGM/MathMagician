@@ -8,5 +8,6 @@ describe('Calc', () => {
     render(<Calc />);
 
     screen.getByText(8);
-    expect(screen.getByText(/8/)).toBeInTheDocument;  });
+    expect(screen.getByText(/8/).toBeInTheDocument);
+  });
 });

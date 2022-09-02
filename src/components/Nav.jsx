@@ -3,22 +3,21 @@ import './myStyle.css';
 
 const Nav = () => (
   <div>
-    <div className='nav'>
+    <div className="nav">
       <h1>Math Magicians</h1>
       <ul>
         <li>
-          <a href="/Home">Home</a> 
+          <a href="/Home">Home</a>
         </li>
         <li>
-          <a href="/Calc">Calc</a> 
+          <a href="/Calc">Calc</a>
         </li>
         <li>
-          <a href="/Quote">Quote</a> 
+          <a href="/Quote">Quote</a>
         </li>
       </ul>
     </div>
   </div>
-  )
+);
 
-  export default Nav
-  
+export default Nav;

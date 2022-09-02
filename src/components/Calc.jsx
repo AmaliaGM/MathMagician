@@ -15,7 +15,7 @@ const btnValues = [
 
 function Calc() {
   return (
-    <div className='calcContainer'>
+    <div className="calcContainer">
       <h2 className="lets">Let´s do some Math!</h2>
       <div>
         <CalcProvider>
@@ -32,7 +32,7 @@ function Calc() {
           </Wrapper>
         </CalcProvider>
       </div>
-    </div>      
+    </div>
   );
 }
 

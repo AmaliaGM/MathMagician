@@ -1,6 +1,5 @@
 import React from 'react';
 import Screen from './Screen';
-import Wrapper from './Wrapper';
 import ButtonBox from './ButtonBox';
 import Button from './Calculator';
 import CalcProvider from '../logic/CalcContext';
@@ -15,24 +14,24 @@ const btnValues = [
 
 function Calc() {
   return (
-    <div className='calcContainer'>
+    <div className="calcContainer">
       <h2 className="lets">Let´s do some Math!</h2>
       <div>
         <CalcProvider>
-          <Wrapper>
+          <div className="wrapper">
             <Screen />
             <ButtonBox>
-              {btnValues.flat().map((btn, i) => (
+              {btnValues.flat().map((btn) => (
                 <Button
                   value={btn}
-                  key={i}
+                  key={btn}
                 />
               ))}
             </ButtonBox>
-          </Wrapper>
+          </div>
         </CalcProvider>
       </div>
-    </div>      
+    </div>
   );
 }
 

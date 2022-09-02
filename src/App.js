@@ -12,9 +12,9 @@ function App() {
     <Nav />
     <div className='container'>
       <Routes>
-        <Route exact path='home' element={<Home />}/>;
-        <Route exact path='calc' element={<Calc />}/>;
-        <Route exact path='quote' element={<Quote />}/>;
+        <Route exact path='/' element={<Home />}/>;
+        <Route exact path='/calc' element={<Calc />}/>;
+        <Route exact path='/quote' element={<Quote />}/>;
       </Routes>
     </div>
   </> 

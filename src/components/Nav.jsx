@@ -1,24 +1,24 @@
 import React from 'react';
 import './myStyle.css';
+import { NavLink } from 'react-router-dom';
 
 const Nav = () => (
   <div>
-    <div className='nav'>
+    <div className="nav">
       <h1>Math Magicians</h1>
       <ul>
         <li>
-          <a href="/Home">Home</a> 
+          <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <a href="/Calc">Calc</a> 
+          <NavLink to="/calc">Calc</NavLink>
         </li>
         <li>
-          <a href="/Quote">Quote</a> 
+          <NavLink to="/quote">Quote</NavLink>
         </li>
       </ul>
     </div>
   </div>
-  )
+);
 
-  export default Nav
-  
+export default Nav;

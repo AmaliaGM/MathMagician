@@ -1,6 +1,5 @@
 import React from 'react';
 import Screen from './Screen';
-import Wrapper from './Wrapper';
 import ButtonBox from './ButtonBox';
 import Button from './Calculator';
 import CalcProvider from '../logic/CalcContext';
@@ -19,7 +18,7 @@ function Calc() {
       <h2 className="lets">Let´s do some Math!</h2>
       <div>
         <CalcProvider>
-          <Wrapper>
+          <div className="wrapper">
             <Screen />
             <ButtonBox>
               {btnValues.flat().map((btn) => (
@@ -29,7 +28,7 @@ function Calc() {
                 />
               ))}
             </ButtonBox>
-          </Wrapper>
+          </div>
         </CalcProvider>
       </div>
     </div>

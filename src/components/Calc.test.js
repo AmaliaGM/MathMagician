@@ -11,4 +11,3 @@ describe('Calc', () => {
     expect(screen.getByText(/8/).toBeInTheDocument);
   });
 });
-W

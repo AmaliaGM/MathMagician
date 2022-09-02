@@ -22,10 +22,10 @@ function Calc() {
           <Wrapper>
             <Screen />
             <ButtonBox>
-              {btnValues.flat().map((btn, i) => (
+              {btnValues.flat().map((btn) => (
                 <Button
                   value={btn}
-                  key={i}
+                  key={btn}
                 />
               ))}
             </ButtonBox>

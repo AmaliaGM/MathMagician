@@ -1,34 +1,24 @@
-import Wrapper from './components/wrapper';
-import Calc from './components/calculator';
-import ButtonBox from './components/ButtonBox';
-import Button from './components/Button';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Calc from './components/Calc';
+import Home from './components/Home';
+import Nav from './components/Nav';
+import Quote from './components/Quote';
+import './components/myStyle.css';
 
-const btnValues = [
-  ['AC', '+/-', '%', '/'],
-  ['7', '8', '9', 'x'],
-  ['4', '5', '6', '-'],
-  ['1', '2', '3', '+'],
-  ['0', '.', '='],
-];
-
-class App extends Calc {
-  render() {
+function App() {
   return (
-    <div className="App">
-      <Wrapper>
-        <Calc />
-        <ButtonBox>
-          {btnValues.flat().map((btn, i) => (
-            <Button
-              value={btn}
-              key={i}
-            />
-          ))}
-        </ButtonBox>
-      </Wrapper>
+  <>
+    <Nav />
+    <div className='container'>
+      <Routes>
+        <Route exact path='/' element={<Home />}/>;
+        <Route exact path='/calc' element={<Calc />}/>;
+        <Route exact path='/quote' element={<Quote />}/>;
+      </Routes>
     </div>
+  </> 
   );
-}
 }
 
 export default App;

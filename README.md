@@ -29,9 +29,9 @@ Previously expirience with React
 ## Author
 👤 Amalia Gomez Moro
 
-GitHub: @AmaliaGM
-Twitter: @AmaliaGomezMoro
-LinkedIn: Maria Amalia Gomez Moro
+- GitHub: @AmaliaGM
+- Twitter: @AmaliaGomezMoro
+- LinkedIn: Maria Amalia Gomez Moro
 
 ## 🤝 Contributing
 Contributions, issues, and feature requests are welcome!
